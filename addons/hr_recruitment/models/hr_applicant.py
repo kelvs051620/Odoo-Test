@@ -112,6 +112,7 @@ class Applicant(models.Model):
         ('archived', 'Archived'),
     ], compute="_compute_application_status")
     applicant_properties = fields.Properties('Properties', definition='job_id.applicant_properties_definition', copy=True)
+    test_field = fields.Char('Test Field', store=True)
 
     def init(self):
         super().init()
